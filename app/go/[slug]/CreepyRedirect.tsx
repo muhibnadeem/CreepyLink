@@ -24,7 +24,7 @@ export default function CreepyRedirect({ url }: { url: string }) {
 
     const redirectTimeout = setTimeout(() => {
       window.location.href = url
-    }, 3500)
+    }, messages.length * 900 + 500) // ensures all messages show
 
     return () => {
       clearInterval(messageInterval)
@@ -46,7 +46,7 @@ export default function CreepyRedirect({ url }: { url: string }) {
 const styles = {
   container: {
     height: '100vh',
-    background: 'blacks',
+    background: 'black', // ✅ fixed
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
